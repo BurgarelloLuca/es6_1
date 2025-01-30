@@ -27,13 +27,18 @@ int main(void) {
 
     for (int i = 0; i < nCamere; i++) {
         posti[i] = rand() % (max1 - min1 + 1) + min1;
-        printf("La camera %d ha %d %s\n", camere[i], posti[i], (posti[i] == 1) ? "posto" : "posti");
+        if (posti[i] == 1)
+            printf("la camera %d ha %d posto\n", i + 1, posti[i]);
+        else
+            printf("la camera %d ha %d posti\n", i + 1, posti[i]);
     }
-
-
     for (int i = 0; i < nCamere; i++) {
         libero[i] = rand() % (max2 - min2 + 1) + min2;
-        printf("La camera %d e' %s\n", camere[i], (libero[i] == 0) ? "libera" : "occupata");
+        if (libero[i] == 0) {
+            printf("la camera %d e' libera\n", i + 1);
+        } else {
+            printf("la camera %d e' occupata\n", i + 1);
+        }
     }
 
 
